@@ -27,10 +27,12 @@ public class ThirdTaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_third_task);
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#561661"));
+                = new ColorDrawable(Color.parseColor("#3FAC5A"));
         actionBar.setBackgroundDrawable(colorDrawable);
         Button countButton = findViewById(R.id.countButton);
-        EditText enterN = findViewById(R.id.enterN);
+        EditText enterP = findViewById(R.id.enterP);
+        EditText enterA = findViewById(R.id.enterA);
+        EditText enterB = findViewById(R.id.enterB);
         TextView result3 = findViewById(R.id.resout3);
         Button readButton = findViewById(R.id.button6);
 
@@ -38,26 +40,25 @@ public class ThirdTaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    int n = Integer.parseInt(enterN.getText().toString());
-                     if (n < 1) {
-                        result3.setText("введіть n яке більше за 1");
-                    } else {
-                        double sum = 0;
-                        int[] p = new int[n+1];
-                        for(int k = 1; k <= p.length; k++) {
-                            p[k-1] = k * 10;
-                        }
-                        for (int i = 1; i <= n; i++) {
-                           double temp = 0;
-                            for (int j = 1; j <= n; j++) {
-                                temp += (p[i] + p[j]) / (p[j] - j);
+                    double P = Double.parseDouble(enterP.getText().toString());
+                    double A = Double.parseDouble(enterA.getText().toString());
+                    double B = Double.parseDouble(enterB.getText().toString());
+                    if((A + B) < 0){
+                        result3.setText("Помилка, число або вираз під коренем меньше 0");
+                    }else {
+                        double sum = 0.0;
+                        for (int i = 1; i <= P; i++) {
+                            for (int j = 1; j <= P; j++) {
+                                for (int k = 1; k <= P; k++) {
+                                    double term = i * (i * j * (i * j * k * Math.sqrt(A + B)));
+                                    sum += term;
+                                }
                             }
-                               sum += (p[i] + i) / temp;
                         }
                         result3.setText(String.format("%.5f", sum));
                     }
                 } catch (NumberFormatException e) {
-                    result3.setText("Введіть коректнe число");
+                    result3.setText("Введіть коректні числа");
                 }
 
             }
@@ -65,10 +66,9 @@ public class ThirdTaskActivity extends AppCompatActivity {
         readButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String txt = "10";
+                String txt = "5\n7\n-2";
                 try {
-                    File file = new File("example.txt");
-                    FileOutputStream fileOutput = openFileOutput(file.getName(), MODE_PRIVATE);
+                    File file = new File("example.txt");FileOutputStream fileOutput = openFileOutput(file.getName(), MODE_PRIVATE);
                     fileOutput.write(txt.getBytes());
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException(e);
@@ -79,7 +79,9 @@ public class ThirdTaskActivity extends AppCompatActivity {
                     FileInputStream fileInput = openFileInput("example.txt");
                     InputStreamReader reader = new InputStreamReader(fileInput);
                     BufferedReader buffer = new BufferedReader(reader);
-                    enterN.setText(buffer.readLine());
+                    enterP.setText(buffer.readLine());
+                    enterA.setText(buffer.readLine());
+                    enterB.setText(buffer.readLine());
                     fileInput.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);

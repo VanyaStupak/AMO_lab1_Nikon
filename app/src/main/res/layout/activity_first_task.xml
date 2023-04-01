@@ -6,30 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".FirstTaskActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="goBack"
-        android:text="назад"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="@color/button"
-        app:layout_constraintVertical_bias="0.976" />
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="306dp"
-        android:layout_height="177dp"
+        android:layout_width="291dp"
+        android:layout_height="157dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081"
+        app:layout_constraintVertical_bias="0.027"
         app:srcCompat="@drawable/img" />
 
     <TextView
@@ -44,15 +29,45 @@
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.136" />
+        app:layout_constraintVertical_bias="0.016" />
+
+    <EditText
+        android:id="@+id/enterB"
+        android:layout_width="124dp"
+        android:layout_height="50dp"
+        android:background="@drawable/my_border"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toEndOf="@+id/result"
+        app:layout_constraintTop_toBottomOf="@+id/enterA"
+        app:layout_constraintVertical_bias="0.016" />
+
+    <TextView
+        android:id="@+id/result1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введіть значення c"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        app:layout_constraintVertical_bias="0.085" />
 
     <EditText
         android:id="@+id/enterA"
         android:layout_width="123dp"
         android:layout_height="53dp"
+        android:background="@drawable/my_border"
         android:ems="10"
         android:gravity="center"
-        android:background="@drawable/my_border"
         android:inputType="text"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +75,21 @@
         app:layout_constraintHorizontal_bias="0.373"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.012" />
+
+    <TextView
+        android:id="@+id/result2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введіть значення d"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result1"
+        app:layout_constraintVertical_bias="0.088" />
 
     <TextView
         android:id="@+id/result"
@@ -74,23 +103,39 @@
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <EditText
-        android:id="@+id/enterB"
+        android:id="@+id/enterC"
         android:layout_width="124dp"
         android:layout_height="50dp"
+        android:background="@drawable/my_border"
         android:ems="10"
         android:gravity="center"
-        android:background="@drawable/my_border"
         android:inputType="text"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toEndOf="@+id/result"
-        app:layout_constraintTop_toBottomOf="@+id/enterA"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintTop_toBottomOf="@+id/enterB"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <EditText
+        android:id="@+id/enterD"
+        android:layout_width="124dp"
+        android:layout_height="50dp"
+        android:background="@drawable/my_border"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="text"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toEndOf="@+id/result"
+        app:layout_constraintTop_toBottomOf="@+id/enterC"
+        app:layout_constraintVertical_bias="0.003" />
 
     <TextView
         android:id="@+id/textView4"
@@ -104,26 +149,21 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.138" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:layout_marginStart="190dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterB"
+        app:layout_constraintTop_toBottomOf="@+id/enterD"
         app:layout_constraintVertical_bias="0.109">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="201dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/button"
-            android:text="ввести дані з файлу" />
 
         <Button
             android:id="@+id/count"
@@ -131,6 +171,12 @@
             android:layout_height="match_parent"
             android:backgroundTint="@color/button"
             android:text="РОЗРАХУВАТИ" />
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="210dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/button"
+            android:text="ввести дані з файлу" />
     </LinearLayout>
 
     <TextView

@@ -29,7 +29,7 @@ import java.util.List;
 
 public class FirstTaskActivity extends AppCompatActivity {
     private TextView result;
-    private EditText enterA, enterB;
+    private EditText enterA, enterB, enterC,enterD;
     private File example;
 
     @Override
@@ -39,25 +39,29 @@ public class FirstTaskActivity extends AppCompatActivity {
         result = findViewById(R.id.resout);
         enterA = findViewById(R.id.enterA);
         enterB = findViewById(R.id.enterB);
+        enterC = findViewById(R.id.enterC);
+        enterD = findViewById(R.id.enterD);
         Button count = findViewById(R.id.count);
         Button readButton = findViewById(R.id.button4);
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#561661"));
+                = new ColorDrawable(Color.parseColor("#3FAC5A"));
         actionBar.setBackgroundDrawable(colorDrawable);
 
         count.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    double num1 = Double.parseDouble(enterA.getText().toString());
-                    double num2 = Double.parseDouble(enterB.getText().toString());
-                    if (num1 == 0 || num2 == 0) {
+                    double A = Double.parseDouble(enterA.getText().toString());
+                    double B = Double.parseDouble(enterB.getText().toString());
+                    double C = Double.parseDouble(enterC.getText().toString());
+                    double D = Double.parseDouble(enterD.getText().toString());
+                    if (C == 0 || D == 0 || (Math.sqrt(B) - Math.pow(A,2) == 0)) {
                         result.setText("Помилка, ділення на 0");
-                    } else if (num2/num1 <= 0 || num1/num2 <=0) {
-                        result.setText("Помилка, значення виразу під знаком алгоритма меньше або дорівнює 0");
+                    } else if (A < 0 || B < 0 || ((A*B)/(C*D)) < 0) {
+                        result.setText("Помилка, число або вираз під коренем меньше 0");
                     } else {
-                        result.setText(String.format("%.5f", Math.log10(num1/num2)+ Math.log(num2/num1)));
+                        result.setText(String.format("%.5f", ((Math.sqrt(A)+Math.pow(B,2))/(Math.sqrt(B)-Math.pow(A,2))) + Math.sqrt((A*B)/(C*D))));
                     }
                 } catch (NumberFormatException e) {
                     TextView result = (TextView) findViewById(R.id.resout);
@@ -68,7 +72,7 @@ public class FirstTaskActivity extends AppCompatActivity {
         readButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String txt = "-246\n-54";
+                String txt = "66\n504\n2.4\n19";
                 try {
                     example = new File("example.txt");
                     FileOutputStream fileOutput = openFileOutput(example.getName(), MODE_PRIVATE);
@@ -84,6 +88,8 @@ public class FirstTaskActivity extends AppCompatActivity {
                     BufferedReader buffer = new BufferedReader(reader);
                     enterA.setText(buffer.readLine());
                     enterB.setText(buffer.readLine());
+                    enterC.setText(buffer.readLine());
+                    enterD.setText(buffer.readLine());
                     fileInput.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);

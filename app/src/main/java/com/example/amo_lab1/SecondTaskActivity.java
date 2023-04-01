@@ -23,7 +23,7 @@ import java.io.InputStreamReader;
 
 public class SecondTaskActivity extends AppCompatActivity {
     private TextView result2;
-    private EditText enterI, enterA, enterB,enterC;
+    private EditText enterK, enterA, enterC;
     private Button readButton3;
 
     @Override
@@ -31,35 +31,28 @@ public class SecondTaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_task);
         result2 = findViewById(R.id.resout2);
-        enterI = findViewById(R.id.editTextTextPersonName2);
+        enterK = findViewById(R.id.editTextTextPersonName2);
         enterA = findViewById(R.id.editTextTextPersonName21);
-        enterB = findViewById(R.id.editTextTextPersonName22);
-        enterC = findViewById(R.id.editTextTextPersonName23);
+        enterC = findViewById(R.id.editTextTextPersonName22);
+
         readButton3 = findViewById(R.id.input1);
         Button count2 = findViewById(R.id.count2);
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#561661"));
+                = new ColorDrawable(Color.parseColor("#3FAC5A"));
         actionBar.setBackgroundDrawable(colorDrawable);
         count2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    double I = Double.parseDouble(enterI.getText().toString());
+                    double K = Double.parseDouble(enterK.getText().toString());
                     double C = Double.parseDouble(enterC.getText().toString());
                     double A = Double.parseDouble(enterA.getText().toString());
-                    double B = Double.parseDouble(enterB.getText().toString());
-                    if (I % 3 <= 1) {
-                        if (Math.pow(C,I/A) == 0 || A == 0 || Math.pow(A,I/C) == 0 || C == 0 || Math.pow(A,B-I)/Math.pow(C,I/A) <= 0 || Math.pow(B,C-I)/Math.pow(A,I/C) <= 0) {
-                            result2.setText("Помилка, ділення на 0 або вираз під коренем < 0");
-                        } else {
-                            double res1 = Math.sqrt(Math.pow(A,B-I)/Math.pow(C,I/A)) + Math.sqrt(Math.pow(B,C-I)/Math.pow(A,I/C));
+                    if (K < 10) {
+                            double res1 = Math.pow((A+C),4) + Math.pow((A-C),2);
                             result2.setText(String.format("%.5f", res1));
-                        }
-                    } else if (Math.pow(C+A,I) == 0) {
-                        result2.setText("Помилка, ділення на 0");
                     } else {
-                        double res2 = ((A+B) / Math.pow(C+A,I)) + (I +Math.pow(C,I));
+                        double res2 = Math.pow((A-C),3) + Math.pow((A+C),2);
                         result2.setText(String.format("%.5f", res2));
                     }
                 } catch (NumberFormatException e) {
@@ -73,7 +66,7 @@ public class SecondTaskActivity extends AppCompatActivity {
         readButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String txt = "6\n4\n7\n10.4";
+                String txt = "12\n36.6\n-4";
                 try {
                     File file = new File("example.txt");
                     FileOutputStream fileOutput = openFileOutput(file.getName(), MODE_PRIVATE);
@@ -87,9 +80,8 @@ public class SecondTaskActivity extends AppCompatActivity {
                     FileInputStream fileInput = openFileInput("example.txt");
                     InputStreamReader reader = new InputStreamReader(fileInput);
                     BufferedReader buffer = new BufferedReader(reader);
-                    enterI.setText(buffer.readLine());
+                    enterK.setText(buffer.readLine());
                     enterA.setText(buffer.readLine());
-                    enterB.setText(buffer.readLine());
                     enterC.setText(buffer.readLine());
 
                     fileInput.close();

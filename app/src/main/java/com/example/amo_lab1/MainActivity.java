@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#561661"));
+                = new ColorDrawable(Color.parseColor("#3FAC5A"));
         actionBar.setBackgroundDrawable(colorDrawable);
 
     }
