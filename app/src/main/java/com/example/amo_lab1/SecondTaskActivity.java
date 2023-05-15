@@ -39,7 +39,7 @@ public class SecondTaskActivity extends AppCompatActivity {
         Button count2 = findViewById(R.id.count2);
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#3FAC5A"));
+                = new ColorDrawable(Color.parseColor("#EC920D"));
         actionBar.setBackgroundDrawable(colorDrawable);
         count2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +66,7 @@ public class SecondTaskActivity extends AppCompatActivity {
         readButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String txt = "12\n36.6\n-4";
+                String txt = "12\n-128\n29.5";
                 try {
                     File file = new File("example.txt");
                     FileOutputStream fileOutput = openFileOutput(file.getName(), MODE_PRIVATE);

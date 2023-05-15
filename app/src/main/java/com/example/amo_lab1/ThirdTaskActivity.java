@@ -27,7 +27,7 @@ public class ThirdTaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_third_task);
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#3FAC5A"));
+                = new ColorDrawable(Color.parseColor("#EC920D"));
         actionBar.setBackgroundDrawable(colorDrawable);
         Button countButton = findViewById(R.id.countButton);
         EditText enterP = findViewById(R.id.enterP);
@@ -66,7 +66,7 @@ public class ThirdTaskActivity extends AppCompatActivity {
         readButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String txt = "5\n7\n-2";
+                String txt = "4\n12\n-8";
                 try {
                     File file = new File("example.txt");FileOutputStream fileOutput = openFileOutput(file.getName(), MODE_PRIVATE);
                     fileOutput.write(txt.getBytes());

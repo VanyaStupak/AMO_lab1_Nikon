@@ -35,6 +35,7 @@
         android:id="@+id/enterB"
         android:layout_width="124dp"
         android:layout_height="50dp"
+        android:layout_marginTop="2dp"
         android:background="@drawable/my_border"
         android:ems="10"
         android:gravity="center"
@@ -111,13 +112,14 @@
         android:layout_height="50dp"
         android:background="@drawable/my_border"
         android:ems="10"
+        android:layout_marginTop="2dp"
         android:gravity="center"
         android:inputType="text"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.37"
-        app:layout_constraintStart_toEndOf="@+id/result"
+        app:layout_constraintStart_toEndOf="@+id/result1"
         app:layout_constraintTop_toBottomOf="@+id/enterB"
         app:layout_constraintVertical_bias="0.011" />
 
@@ -127,13 +129,14 @@
         android:layout_height="50dp"
         android:background="@drawable/my_border"
         android:ems="10"
+        android:layout_marginTop="2dp"
         android:gravity="center"
         android:inputType="text"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.37"
-        app:layout_constraintStart_toEndOf="@+id/result"
+        app:layout_constraintStart_toEndOf="@+id/result2"
         app:layout_constraintTop_toBottomOf="@+id/enterC"
         app:layout_constraintVertical_bias="0.003" />
 
@@ -153,10 +156,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginStart="190dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -167,13 +169,16 @@
 
         <Button
             android:id="@+id/count"
-            android:layout_width="210dp"
+            android:layout_width="205dp"
             android:layout_height="match_parent"
+            android:layout_gravity="left"
             android:backgroundTint="@color/button"
             android:text="РОЗРАХУВАТИ" />
+
         <Button
             android:id="@+id/button4"
-            android:layout_width="210dp"
+            android:layout_width="205dp"
+            android:layout_gravity="right"
             android:layout_height="match_parent"
             android:backgroundTint="@color/button"
             android:text="ввести дані з файлу" />

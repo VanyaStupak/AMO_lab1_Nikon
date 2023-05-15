@@ -28,8 +28,8 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
+                android:layout_marginStart="10dp"
+                android:textSize="20dp"
                 android:text="k = "
                 android:textColor="@color/black" />
 
@@ -37,7 +37,7 @@
                 android:id="@+id/editTextTextPersonName2"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center"
+                android:layout_gravity="left"
                 android:layout_marginEnd="150dp"
                 android:gravity="center"
                 android:background="@drawable/my_border"
@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
+                android:textSize="20dp"
                 android:text="a = "
                 android:textColor="@color/black" />
 
@@ -66,7 +67,7 @@
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_marginEnd="150dp"
+                android:layout_marginEnd="135dp"
                 android:background="@drawable/my_border"
                 android:ems="10"
                 android:gravity="center"
@@ -82,8 +83,9 @@
                 android:id="@+id/textView82"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginStart="280dp"
                 android:gravity="right"
+                android:textSize="20dp"
                 android:text="c = "
                 android:textColor="@color/black" />
 
@@ -92,7 +94,6 @@
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_marginEnd="150dp"
                 android:background="@drawable/my_border"
                 android:ems="10"
                 android:gravity="center"
@@ -104,10 +105,9 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginStart="190dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -118,13 +118,16 @@
 
         <Button
             android:id="@+id/count2"
-            android:layout_width="210dp"
+            android:layout_width="205dp"
             android:layout_height="match_parent"
+            android:layout_gravity="left"
             android:backgroundTint="@color/button"
             android:text="РОЗРАХУВАТИ" />
+
         <Button
             android:id="@+id/input1"
-            android:layout_width="210dp"
+            android:layout_width="205dp"
+            android:layout_gravity="right"
             android:layout_height="match_parent"
             android:backgroundTint="@color/button"
             android:text="ввести дані з файлу" />

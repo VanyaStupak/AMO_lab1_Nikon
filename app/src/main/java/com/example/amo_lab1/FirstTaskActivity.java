@@ -45,7 +45,7 @@ public class FirstTaskActivity extends AppCompatActivity {
         Button readButton = findViewById(R.id.button4);
         ActionBar actionBar = getSupportActionBar();
         ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#3FAC5A"));
+                = new ColorDrawable(Color.parseColor("#EC920D"));
         actionBar.setBackgroundDrawable(colorDrawable);
 
         count.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +72,7 @@ public class FirstTaskActivity extends AppCompatActivity {
         readButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String txt = "66\n504\n2.4\n19";
+                String txt = "21\n5\n1\n13.25";
                 try {
                     example = new File("example.txt");
                     FileOutputStream fileOutput = openFileOutput(example.getName(), MODE_PRIVATE);
